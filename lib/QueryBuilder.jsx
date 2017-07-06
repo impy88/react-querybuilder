@@ -33,6 +33,8 @@ export default class QueryBuilder extends React.Component {
                 removeRuleAction: PropTypes.func,
                 combinatorSelector: PropTypes.func,
                 fieldSelector: PropTypes.func,
+                colSelector: PropTypes.func,
+                rowSelector: PropTypes.func,
                 operatorSelector: PropTypes.func,
                 valueEditor: PropTypes.func
             }),
@@ -91,6 +93,9 @@ export default class QueryBuilder extends React.Component {
             value: '',
             removeRule: '',
 
+            row: '',
+            col: '',
+
         };
     }
 
@@ -102,6 +107,8 @@ export default class QueryBuilder extends React.Component {
             removeRuleAction: ActionElement,
             combinatorSelector: ValueSelector,
             fieldSelector: ValueSelector,
+            colSelector: (props) => <div>{props.children}</div>,
+            rowSelector: (props) => <div>{props.children}</div>,
             operatorSelector: ValueSelector,
             valueEditor: ValueEditor
         };
@@ -111,27 +118,32 @@ export default class QueryBuilder extends React.Component {
         const {fields, operators, combinators, controlElements, controlClassnames} = this.props;
         const classNames = Object.assign({}, QueryBuilder.defaultControlClassnames, controlClassnames);
         const controls = Object.assign({}, QueryBuilder.defaultControlElements, controlElements);
+
+        const schema =  {
+            fields,
+            operators,
+            combinators,
+
+            classNames,
+
+            createRule: this.createRule.bind(this),
+            createRuleGroup: this.createRuleGroup.bind(this),
+            onRuleAdd: this._notifyQueryChange.bind(this, this.onRuleAdd),
+            onGroupAdd: this._notifyQueryChange.bind(this, this.onGroupAdd),
+            onRuleRemove: this._notifyQueryChange.bind(this, this.onRuleRemove),
+            onGroupRemove: this._notifyQueryChange.bind(this, this.onGroupRemove),
+            onPropChange: this._notifyQueryChange.bind(this, this.onPropChange),
+            getLevel: this.getLevel.bind(this),
+            isRuleGroup: this.isRuleGroup.bind(this),
+            controls,
+            getOperators: (...args)=>this.getOperators(...args),
+        }
+
+        this.state = { root: {}, schema }
+
         this.setState({
             root: this.getInitialQuery(),
-            schema: {
-                fields,
-                operators,
-                combinators,
-
-                classNames,
-
-                createRule: this.createRule.bind(this),
-                createRuleGroup: this.createRuleGroup.bind(this),
-                onRuleAdd: this._notifyQueryChange.bind(this, this.onRuleAdd),
-                onGroupAdd: this._notifyQueryChange.bind(this, this.onGroupAdd),
-                onRuleRemove: this._notifyQueryChange.bind(this, this.onRuleRemove),
-                onGroupRemove: this._notifyQueryChange.bind(this, this.onGroupRemove),
-                onPropChange: this._notifyQueryChange.bind(this, this.onPropChange),
-                getLevel: this.getLevel.bind(this),
-                isRuleGroup: this.isRuleGroup.bind(this),
-                controls,
-                getOperators: (...args)=>this.getOperators(...args),
-            }
+            schema: schema
         });
 
     }
@@ -176,11 +188,13 @@ export default class QueryBuilder extends React.Component {
         };
     }
 
-    createRuleGroup() {
+    createRuleGroup(combinator) {
         return {
             id: `g-${uniqueId()}`,
-            rules: [],
-            combinator: this.props.combinators[0].name,
+            rules: [
+                this.createRule()
+            ],
+            combinator: combinator || this.props.combinators[0].name,
         };
     }
 
@@ -217,12 +231,17 @@ export default class QueryBuilder extends React.Component {
         this.setState({root: this.state.root});
     }
 
-    onRuleRemove(ruleId, parentId) {
+    onRuleRemove(ruleId, parentId, parentGroupId) {
         const parent = this._findRule(parentId, this.state.root);
         const index = parent.rules.findIndex(x=>x.id === ruleId);
 
         parent.rules.splice(index, 1);
-        this.setState({root: this.state.root});
+
+        if (parent.rules.length === 0 && parentGroupId) {
+            this.onGroupRemove(parentId, parentGroupId);
+        } else {
+            this.setState({root: this.state.root});
+        }
     }
 
     onGroupRemove(groupId, parentId) {
