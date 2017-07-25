@@ -71,7 +71,7 @@ module.exports =
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(30);
+var freeGlobal = __webpack_require__(31);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -380,7 +380,7 @@ module.exports = ListCache;
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var eq = __webpack_require__(35);
+var eq = __webpack_require__(36);
 
 /**
  * Gets the index at which the `key` is found in `array` of key-value pairs.
@@ -441,8 +441,8 @@ module.exports = baseGetTag;
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assignValue = __webpack_require__(27),
-    baseAssignValue = __webpack_require__(28);
+var assignValue = __webpack_require__(28),
+    baseAssignValue = __webpack_require__(29);
 
 /**
  * Copies properties of `source` to `object`.
@@ -714,7 +714,7 @@ module.exports = cloneArrayBuffer;
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayFilter = __webpack_require__(63),
-    stubArray = __webpack_require__(41);
+    stubArray = __webpack_require__(42);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -840,9 +840,9 @@ module.exports = isObjectLike;
 /* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayLikeKeys = __webpack_require__(24),
+var arrayLikeKeys = __webpack_require__(25),
     baseKeys = __webpack_require__(71),
-    isArrayLike = __webpack_require__(36);
+    isArrayLike = __webpack_require__(37);
 
 /**
  * Creates an array of the own enumerable property names of `object`.
@@ -881,6 +881,27 @@ module.exports = keys;
 
 /***/ }),
 /* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -908,7 +929,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -981,13 +1002,13 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseTimes = __webpack_require__(73),
     isArguments = __webpack_require__(125),
     isArray = __webpack_require__(19),
-    isBuffer = __webpack_require__(37),
+    isBuffer = __webpack_require__(38),
     isIndex = __webpack_require__(100),
     isTypedArray = __webpack_require__(126);
 
@@ -1036,7 +1057,7 @@ module.exports = arrayLikeKeys;
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports) {
 
 /**
@@ -1062,7 +1083,7 @@ module.exports = arrayPush;
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports) {
 
 /**
@@ -1094,11 +1115,11 @@ module.exports = arrayReduce;
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseAssignValue = __webpack_require__(28),
-    eq = __webpack_require__(35);
+var baseAssignValue = __webpack_require__(29),
+    eq = __webpack_require__(36);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -1128,7 +1149,7 @@ module.exports = assignValue;
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var defineProperty = __webpack_require__(86);
@@ -1159,10 +1180,10 @@ module.exports = baseAssignValue;
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayPush = __webpack_require__(25),
+var arrayPush = __webpack_require__(26),
     isArray = __webpack_require__(19);
 
 /**
@@ -1185,7 +1206,7 @@ module.exports = baseGetAllKeys;
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -1196,10 +1217,10 @@ module.exports = freeGlobal;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43)))
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var overArg = __webpack_require__(33);
+var overArg = __webpack_require__(34);
 
 /** Built-in value references. */
 var getPrototype = overArg(Object.getPrototypeOf, Object);
@@ -1208,13 +1229,13 @@ module.exports = getPrototype;
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayPush = __webpack_require__(25),
-    getPrototype = __webpack_require__(31),
+var arrayPush = __webpack_require__(26),
+    getPrototype = __webpack_require__(32),
     getSymbols = __webpack_require__(17),
-    stubArray = __webpack_require__(41);
+    stubArray = __webpack_require__(42);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeGetSymbols = Object.getOwnPropertySymbols;
@@ -1239,7 +1260,7 @@ module.exports = getSymbolsIn;
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports) {
 
 /**
@@ -1260,7 +1281,7 @@ module.exports = overArg;
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -1292,7 +1313,7 @@ module.exports = toSource;
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports) {
 
 /**
@@ -1335,11 +1356,11 @@ module.exports = eq;
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(38),
-    isLength = __webpack_require__(39);
+var isFunction = __webpack_require__(39),
+    isLength = __webpack_require__(40);
 
 /**
  * Checks if `value` is array-like. A value is considered array-like if it's
@@ -1374,7 +1395,7 @@ module.exports = isArrayLike;
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(0),
@@ -1416,10 +1437,10 @@ var isBuffer = nativeIsBuffer || stubFalse;
 
 module.exports = isBuffer;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(23)(module)))
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(7),
@@ -1462,7 +1483,7 @@ module.exports = isFunction;
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports) {
 
 /** Used as references for various `Number` constants. */
@@ -1503,12 +1524,12 @@ module.exports = isLength;
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayLikeKeys = __webpack_require__(24),
+var arrayLikeKeys = __webpack_require__(25),
     baseKeysIn = __webpack_require__(72),
-    isArrayLike = __webpack_require__(36);
+    isArrayLike = __webpack_require__(37);
 
 /**
  * Creates an array of the own and inherited enumerable property names of `object`.
@@ -1541,7 +1562,7 @@ module.exports = keysIn;
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 /**
@@ -1567,27 +1588,6 @@ function stubArray() {
 }
 
 module.exports = stubArray;
-
-
-/***/ }),
-/* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-
-
-var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-
-module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
@@ -1694,6 +1694,9 @@ var QueryBuilder = function (_React$Component) {
                     removeRuleAction: _propTypes2.default.func,
                     combinatorSelector: _propTypes2.default.func,
                     fieldSelector: _propTypes2.default.func,
+                    controls: _propTypes2.default.func,
+                    container: _propTypes2.default.func,
+                    rowSelector: _propTypes2.default.func,
                     operatorSelector: _propTypes2.default.func,
                     valueEditor: _propTypes2.default.func
                 }),
@@ -1736,29 +1739,34 @@ var QueryBuilder = function (_React$Component) {
 
             var classNames = Object.assign({}, QueryBuilder.defaultControlClassnames, controlClassnames);
             var controls = Object.assign({}, QueryBuilder.defaultControlElements, controlElements);
+
+            var schema = {
+                fields: fields,
+                operators: operators,
+                combinators: combinators,
+
+                classNames: classNames,
+
+                createRule: this.createRule.bind(this),
+                createRuleGroup: this.createRuleGroup.bind(this),
+                onRuleAdd: this._notifyQueryChange.bind(this, this.onRuleAdd),
+                onGroupAdd: this._notifyQueryChange.bind(this, this.onGroupAdd),
+                onRuleRemove: this._notifyQueryChange.bind(this, this.onRuleRemove),
+                onGroupRemove: this._notifyQueryChange.bind(this, this.onGroupRemove),
+                onPropChange: this._notifyQueryChange.bind(this, this.onPropChange),
+                getLevel: this.getLevel.bind(this),
+                isRuleGroup: this.isRuleGroup.bind(this),
+                controls: controls,
+                getOperators: function getOperators() {
+                    return _this2.getOperators.apply(_this2, arguments);
+                }
+            };
+
+            this.state = { root: {}, schema: schema };
+
             this.setState({
                 root: this.getInitialQuery(),
-                schema: {
-                    fields: fields,
-                    operators: operators,
-                    combinators: combinators,
-
-                    classNames: classNames,
-
-                    createRule: this.createRule.bind(this),
-                    createRuleGroup: this.createRuleGroup.bind(this),
-                    onRuleAdd: this._notifyQueryChange.bind(this, this.onRuleAdd),
-                    onGroupAdd: this._notifyQueryChange.bind(this, this.onGroupAdd),
-                    onRuleRemove: this._notifyQueryChange.bind(this, this.onRuleRemove),
-                    onGroupRemove: this._notifyQueryChange.bind(this, this.onGroupRemove),
-                    onPropChange: this._notifyQueryChange.bind(this, this.onPropChange),
-                    getLevel: this.getLevel.bind(this),
-                    isRuleGroup: this.isRuleGroup.bind(this),
-                    controls: controls,
-                    getOperators: function getOperators() {
-                        return _this2.getOperators.apply(_this2, arguments);
-                    }
-                }
+                schema: schema
             });
         }
     }, {
@@ -1816,11 +1824,11 @@ var QueryBuilder = function (_React$Component) {
         }
     }, {
         key: 'createRuleGroup',
-        value: function createRuleGroup() {
+        value: function createRuleGroup(combinator) {
             return {
                 id: 'g-' + (0, _v2.default)(),
-                rules: [],
-                combinator: this.props.combinators[0].name
+                rules: [this.createRule()],
+                combinator: combinator || this.props.combinators[0].name
             };
         }
     }, {
@@ -1861,14 +1869,19 @@ var QueryBuilder = function (_React$Component) {
         }
     }, {
         key: 'onRuleRemove',
-        value: function onRuleRemove(ruleId, parentId) {
+        value: function onRuleRemove(ruleId, parentId, parentGroupId) {
             var parent = this._findRule(parentId, this.state.root);
             var index = parent.rules.findIndex(function (x) {
                 return x.id === ruleId;
             });
 
             parent.rules.splice(index, 1);
-            this.setState({ root: this.state.root });
+
+            if (parent.rules.length === 0 && parentGroupId) {
+                this.onGroupRemove(parentId, parentGroupId);
+            } else {
+                this.setState({ root: this.state.root });
+            }
         }
     }, {
         key: 'onGroupRemove',
@@ -1996,7 +2009,10 @@ var QueryBuilder = function (_React$Component) {
                 fields: '',
                 operators: '',
                 value: '',
-                removeRule: ''
+                removeRule: '',
+
+                row: '',
+                col: ''
 
             };
         }
@@ -2010,6 +2026,12 @@ var QueryBuilder = function (_React$Component) {
                 removeRuleAction: _index.ActionElement,
                 combinatorSelector: _index.ValueSelector,
                 fieldSelector: _index.ValueSelector,
+                container: function container(props) {
+                    return _react2.default.createElement('div', props);
+                },
+                controls: function controls(props) {
+                    return _react2.default.createElement('div', props);
+                },
                 operatorSelector: _index.ValueSelector,
                 valueEditor: _index.ValueEditor
             };
@@ -2073,21 +2095,57 @@ var Rule = function (_React$Component) {
 
 
             onPropChange(property, value, id);
+        }, _this.addRule = function (event, combinator) {
+            /*
+             * if clicked on the same group name -> add a rule
+             * if not -> add a group + rule
+             * first rule sets a combinator and don't produces any group
+             */
+            var rules = _this.props.rules;
+            var _this$props$schema = _this.props.schema,
+                createRuleGroup = _this$props$schema.createRuleGroup,
+                onGroupAdd = _this$props$schema.onGroupAdd,
+                createRule = _this$props$schema.createRule,
+                onRuleAdd = _this$props$schema.onRuleAdd,
+                onPropChange = _this$props$schema.onPropChange;
+
+
+            if (rules.length <= 1) {
+                onPropChange('combinator', combinator, _this.props.parentId);
+                onRuleAdd(createRule(), _this.props.parentId);
+            } else if (_this.props.combinator !== combinator) {
+                var newGroup = createRuleGroup(combinator);
+                onGroupAdd(newGroup, _this.props.parentId);
+            } else {
+                onRuleAdd(createRule(), _this.props.parentId);
+            }
         }, _this.removeRule = function (event) {
             event.preventDefault();
             event.stopPropagation();
 
-            _this.props.schema.onRuleRemove(_this.props.id, _this.props.parentId);
+            var onRuleRemove = _this.props.schema.onRuleRemove;
+            var _this$props2 = _this.props,
+                id = _this$props2.id,
+                parentId = _this$props2.parentId,
+                parentGroupId = _this$props2.parentGroupId;
+
+
+            onRuleRemove(id, parentId, parentGroupId);
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(Rule, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var _props = this.props,
+                idx = _props.idx,
                 field = _props.field,
                 operator = _props.operator,
                 value = _props.value,
+                rules = _props.rules,
+                combinator = _props.combinator,
                 _props$schema = _props.schema,
                 fields = _props$schema.fields,
                 controls = _props$schema.controls,
@@ -2096,9 +2154,15 @@ var Rule = function (_React$Component) {
                 classNames = _props$schema.classNames;
 
             var level = getLevel(this.props.id);
+            var inOnlyOneRule = level === 0 && rules.length === 1;
+            var isMainRule = level === 0 && idx === 0;
+
+            var Container = controls.container;
+            var Controls = controls.controls;
+
             return _react2.default.createElement(
-                'div',
-                { className: 'rule ' + classNames.rule },
+                Container,
+                { className: 'rule', title: isMainRule ? 'Select' : combinator, level: level },
                 _react2.default.createElement(controls.fieldSelector, {
                     options: fields,
                     value: field,
@@ -2122,12 +2186,34 @@ var Rule = function (_React$Component) {
                     handleOnChange: this.onValueChanged,
                     level: level
                 }),
-                _react2.default.createElement(controls.removeRuleAction, {
-                    label: 'x',
-                    className: 'rule-remove ' + classNames.removeRule,
-                    handleOnClick: this.removeRule,
-                    level: level
-                })
+                _react2.default.createElement(
+                    Controls,
+                    null,
+                    _react2.default.createElement(controls.addRuleAction, {
+                        label: 'AND',
+                        className: 'ruleGroup-addRule ' + classNames.addRule,
+                        handleOnClick: function handleOnClick(e) {
+                            return _this2.addRule(e, 'and');
+                        },
+                        rules: rules,
+                        level: level
+                    }),
+                    _react2.default.createElement(controls.addRuleAction, {
+                        label: 'OR',
+                        className: 'ruleGroup-addRule ' + classNames.addRule,
+                        handleOnClick: function handleOnClick(e) {
+                            return _this2.addRule(e, 'or');
+                        },
+                        rules: rules,
+                        level: level
+                    }),
+                    !inOnlyOneRule ? _react2.default.createElement(controls.removeRuleAction, {
+                        label: 'x',
+                        className: 'rule-remove ' + classNames.removeRule,
+                        handleOnClick: this.removeRule,
+                        level: level
+                    }) : null
+                )
             );
         }
     }], [{
@@ -2136,8 +2222,10 @@ var Rule = function (_React$Component) {
             return {
                 id: null,
                 parentId: null,
+                parentGroupId: null,
                 field: null,
                 operator: null,
+                combinator: null,
                 value: null,
                 schema: null
             };
@@ -2245,49 +2333,25 @@ var RuleGroup = function (_React$Component) {
             var level = getLevel(this.props.id);
             return _react2.default.createElement(
                 'div',
-                { className: 'ruleGroup ' + classNames.ruleGroup },
-                _react2.default.createElement(controls.combinatorSelector, {
-                    options: combinators,
-                    value: combinator,
-                    className: 'ruleGroup-combinators ' + classNames.combinators,
-                    handleOnChange: this.onCombinatorChange,
-                    rules: rules,
-                    level: level
-                }),
-                _react2.default.createElement(controls.addRuleAction, {
-                    label: '+Rule',
-                    className: 'ruleGroup-addRule ' + classNames.addRule,
-                    handleOnClick: this.addRule,
-                    rules: rules,
-                    level: level
-                }),
-                _react2.default.createElement(controls.addGroupAction, {
-                    label: '+Group',
-                    className: 'ruleGroup-addGroup ' + classNames.addGroup,
-                    handleOnClick: this.addGroup,
-                    rules: rules,
-                    level: level
-                }),
-                this.hasParentGroup() ? _react2.default.createElement(controls.removeGroupAction, {
-                    label: 'x',
-                    className: 'ruleGroup-remove ' + classNames.removeGroup,
-                    handleOnClick: this.removeGroup,
-                    rules: rules,
-                    level: level
-                }) : null,
-                rules.map(function (r) {
+                { className: 'ruleGroup ' + classNames.ruleGroup, style: { marginLeft: level > 0 ? '15px' : 0 } },
+                rules.map(function (r, idx) {
                     return isRuleGroup(r) ? _react2.default.createElement(RuleGroup, { key: r.id,
                         id: r.id,
+                        idx: idx,
                         schema: _this2.props.schema,
                         parentId: _this2.props.id,
                         combinator: r.combinator,
                         rules: r.rules }) : _react2.default.createElement(_Rule2.default, { key: r.id,
                         id: r.id,
+                        idx: idx,
                         field: r.field,
                         value: r.value,
+                        rules: rules,
                         operator: r.operator,
+                        combinator: _this2.props.combinator,
                         schema: _this2.props.schema,
                         parentId: _this2.props.id,
+                        parentGroupId: _this2.props.parentId,
                         onRuleRemove: onRuleRemove });
                 })
             );
@@ -2908,7 +2972,7 @@ module.exports = baseAssign;
 /***/ (function(module, exports, __webpack_require__) {
 
 var copyObject = __webpack_require__(8),
-    keysIn = __webpack_require__(40);
+    keysIn = __webpack_require__(41);
 
 /**
  * The base implementation of `_.assignIn` without support for multiple sources
@@ -2932,7 +2996,7 @@ module.exports = baseAssignIn;
 
 var Stack = __webpack_require__(57),
     arrayEach = __webpack_require__(62),
-    assignValue = __webpack_require__(27),
+    assignValue = __webpack_require__(28),
     baseAssign = __webpack_require__(64),
     baseAssignIn = __webpack_require__(65),
     cloneBuffer = __webpack_require__(75),
@@ -2946,7 +3010,7 @@ var Stack = __webpack_require__(57),
     initCloneByTag = __webpack_require__(98),
     initCloneObject = __webpack_require__(99),
     isArray = __webpack_require__(19),
-    isBuffer = __webpack_require__(37),
+    isBuffer = __webpack_require__(38),
     isObject = __webpack_require__(3),
     keys = __webpack_require__(21);
 
@@ -3149,10 +3213,10 @@ module.exports = baseIsArguments;
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(38),
+var isFunction = __webpack_require__(39),
     isMasked = __webpack_require__(102),
     isObject = __webpack_require__(3),
-    toSource = __webpack_require__(34);
+    toSource = __webpack_require__(35);
 
 /**
  * Used to match `RegExp`
@@ -3203,7 +3267,7 @@ module.exports = baseIsNative;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(7),
-    isLength = __webpack_require__(39),
+    isLength = __webpack_require__(40),
     isObjectLike = __webpack_require__(20);
 
 /** `Object#toString` result references. */
@@ -3425,7 +3489,7 @@ function cloneBuffer(buffer, isDeep) {
 
 module.exports = cloneBuffer;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(23)(module)))
 
 /***/ }),
 /* 76 */
@@ -3454,7 +3518,7 @@ module.exports = cloneDataView;
 /***/ (function(module, exports, __webpack_require__) {
 
 var addMapEntry = __webpack_require__(60),
-    arrayReduce = __webpack_require__(26),
+    arrayReduce = __webpack_require__(27),
     mapToArray = __webpack_require__(113);
 
 /** Used to compose bitmasks for cloning. */
@@ -3505,7 +3569,7 @@ module.exports = cloneRegExp;
 /***/ (function(module, exports, __webpack_require__) {
 
 var addSetEntry = __webpack_require__(61),
-    arrayReduce = __webpack_require__(26),
+    arrayReduce = __webpack_require__(27),
     setToArray = __webpack_require__(118);
 
 /** Used to compose bitmasks for cloning. */
@@ -3627,7 +3691,7 @@ module.exports = copySymbols;
 /***/ (function(module, exports, __webpack_require__) {
 
 var copyObject = __webpack_require__(8),
-    getSymbolsIn = __webpack_require__(32);
+    getSymbolsIn = __webpack_require__(33);
 
 /**
  * Copies own and inherited symbols of `source` to `object`.
@@ -3677,7 +3741,7 @@ module.exports = defineProperty;
 /* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetAllKeys = __webpack_require__(29),
+var baseGetAllKeys = __webpack_require__(30),
     getSymbols = __webpack_require__(17),
     keys = __webpack_require__(21);
 
@@ -3699,9 +3763,9 @@ module.exports = getAllKeys;
 /* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetAllKeys = __webpack_require__(29),
-    getSymbolsIn = __webpack_require__(32),
-    keysIn = __webpack_require__(40);
+var baseGetAllKeys = __webpack_require__(30),
+    getSymbolsIn = __webpack_require__(33),
+    keysIn = __webpack_require__(41);
 
 /**
  * Creates an array of own and inherited enumerable property names and
@@ -3780,7 +3844,7 @@ var DataView = __webpack_require__(52),
     Set = __webpack_require__(56),
     WeakMap = __webpack_require__(59),
     baseGetTag = __webpack_require__(7),
-    toSource = __webpack_require__(34);
+    toSource = __webpack_require__(35);
 
 /** `Object#toString` result references. */
 var mapTag = '[object Map]',
@@ -4114,7 +4178,7 @@ module.exports = initCloneByTag;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseCreate = __webpack_require__(67),
-    getPrototype = __webpack_require__(31),
+    getPrototype = __webpack_require__(32),
     isPrototype = __webpack_require__(18);
 
 /**
@@ -4498,7 +4562,7 @@ module.exports = mapToArray;
 /* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var overArg = __webpack_require__(33);
+var overArg = __webpack_require__(34);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeKeys = overArg(Object.keys, Object);
@@ -4536,7 +4600,7 @@ module.exports = nativeKeysIn;
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(30);
+/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(31);
 
 /** Detect free variable `exports`. */
 var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
@@ -4559,7 +4623,7 @@ var nodeUtil = (function() {
 
 module.exports = nodeUtil;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(23)(module)))
 
 /***/ }),
 /* 117 */
@@ -4890,8 +4954,8 @@ module.exports = stubFalse;
 
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(13);
-  var warning = __webpack_require__(23);
-  var ReactPropTypesSecret = __webpack_require__(42);
+  var warning = __webpack_require__(24);
+  var ReactPropTypesSecret = __webpack_require__(22);
   var loggedTypeFailures = {};
 }
 
@@ -4959,11 +5023,14 @@ module.exports = checkPropTypes;
 
 var emptyFunction = __webpack_require__(12);
 var invariant = __webpack_require__(13);
+var ReactPropTypesSecret = __webpack_require__(22);
 
 module.exports = function() {
-  // Important!
-  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
-  function shim() {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret) {
+      // It is still safe when called from React.
+      return;
+    }
     invariant(
       false,
       'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
@@ -4975,6 +5042,8 @@ module.exports = function() {
   function getShim() {
     return shim;
   };
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
   var ReactPropTypes = {
     array: shim,
     bool: shim,
@@ -5020,9 +5089,9 @@ module.exports = function() {
 
 var emptyFunction = __webpack_require__(12);
 var invariant = __webpack_require__(13);
-var warning = __webpack_require__(23);
+var warning = __webpack_require__(24);
 
-var ReactPropTypesSecret = __webpack_require__(42);
+var ReactPropTypesSecret = __webpack_require__(22);
 var checkPropTypes = __webpack_require__(128);
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
@@ -5329,6 +5398,20 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       return emptyFunction.thatReturnsNull;
     }
 
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        warning(
+          false,
+          'Invalid argument supplid to oneOfType. Expected an array of check functions, but ' +
+          'received %s at index %s.',
+          getPostfixForTypeWarning(checker),
+          i
+        );
+        return emptyFunction.thatReturnsNull;
+      }
+    }
+
     function validate(props, propName, componentName, location, propFullName) {
       for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
         var checker = arrayOfTypeCheckers[i];
@@ -5461,6 +5544,9 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   // This handles more types than `getPropType`. Only used for error messages.
   // See `createPrimitiveTypeChecker`.
   function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
     var propType = getPropType(propValue);
     if (propType === 'object') {
       if (propValue instanceof Date) {
@@ -5470,6 +5556,23 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       }
     }
     return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
   }
 
   // Returns class name of the object, if any.

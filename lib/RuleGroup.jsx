@@ -16,70 +16,29 @@ export default class RuleGroup extends React.Component {
         const { combinator, rules, schema: {combinators, controls, onRuleRemove, isRuleGroup, getLevel, classNames } } = this.props;
         const level = getLevel(this.props.id);
           return (
-            <div className={`ruleGroup ${classNames.ruleGroup}`}>
-                {
-                    React.createElement(controls.combinatorSelector,
-                        {
-                            options: combinators,
-                            value: combinator,
-                            className: `ruleGroup-combinators ${classNames.combinators}`,
-                            handleOnChange: this.onCombinatorChange, 
-                            rules: rules, 
-                            level: level
-                        }
-                    )
-                }
-                {
-                    React.createElement(controls.addRuleAction,
-                        {
-                            label: '+Rule',
-                            className: `ruleGroup-addRule ${classNames.addRule}`,
-                            handleOnClick: this.addRule, 
-                            rules: rules, 
-                            level: level
-                        }
-                    )
-                }
-                {
-                    React.createElement(controls.addGroupAction,
-                        {
-                            label: '+Group',
-                            className: `ruleGroup-addGroup ${classNames.addGroup}`,
-                            handleOnClick: this.addGroup, 
-                            rules: rules, 
-                            level: level
-                        }
-                    )
-                }
-                {
-                    this.hasParentGroup() ?
-                        React.createElement(controls.removeGroupAction,
-                            {
-                                label: 'x',
-                                className: `ruleGroup-remove ${classNames.removeGroup}`,
-                                handleOnClick: this.removeGroup, 
-                                rules: rules, 
-                                level: level
-                            }
-                        ) : null
-                }
+            <div className={`ruleGroup ${classNames.ruleGroup}`} style={{ marginLeft: level > 0 ? '15px' : 0}}>
                  {
-                     rules.map(r=> {
+                     rules.map((r, idx)=> {
                          return (
                              isRuleGroup(r)
                                  ? <RuleGroup key={r.id}
                                               id={r.id}
+                                              idx={idx}
                                               schema={this.props.schema}
                                               parentId={this.props.id}
                                               combinator={r.combinator}
                                               rules={r.rules}/>
                                  : <Rule key={r.id}
                                          id={r.id}
+                                         idx={idx}
                                          field={r.field}
                                          value={r.value}
+                                         rules={rules}
                                          operator={r.operator}
+                                         combinator={this.props.combinator}
                                          schema={this.props.schema}
                                          parentId={this.props.id}
+                                         parentGroupId={this.props.parentId}
                                          onRuleRemove={onRuleRemove}/>
                          );
                      })
