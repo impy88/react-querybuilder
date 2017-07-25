@@ -16,7 +16,7 @@ export default class RuleGroup extends React.Component {
         const { combinator, rules, schema: {combinators, controls, onRuleRemove, isRuleGroup, getLevel, classNames } } = this.props;
         const level = getLevel(this.props.id);
           return (
-            <div className={`ruleGroup ${classNames.ruleGroup}`}>
+            <div className={`ruleGroup ${classNames.ruleGroup}`} style={{ marginLeft: level > 0 ? '15px' : 0}}>
                  {
                      rules.map((r, idx)=> {
                          return (

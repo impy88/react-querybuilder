@@ -20,50 +20,47 @@ export default class Rule extends React.Component {
         const inOnlyOneRule = level === 0 && rules.length === 1;
         const isMainRule = level === 0 && idx === 0;
 
-        const Col = controls.colSelector
-        const Row = controls.rowSelector
+        const Container = controls.container
+        const Controls = controls.controls
 
         return (
-            <Row className={`rule ${classNames.row}`}>
-                <Col className={classNames.col}>
-                    <span>{isMainRule ? 'Select' : combinator}</span>
-                </Col>
-                <Col className={classNames.col}>
-                    {
-                        React.createElement(controls.fieldSelector,
-                            {
-                                options: fields,
-                                value: field,
-                                className: `rule-fields ${classNames.fields}`,
-                                handleOnChange: this.onFieldChanged, 
-                                level: level
-                            }
-                        )
-                    }
-                    {
-                        React.createElement(controls.operatorSelector,
-                            {
-                                field: field,
-                                options: getOperators(field),
-                                value: operator,
-                                className: `rule-operators ${classNames.operators}`,
-                                handleOnChange: this.onOperatorChanged, 
-                                level: level
-                            }
-                        )
-                    }
-                    {
-                        React.createElement(controls.valueEditor,
-                            {
-                                field: field,
-                                operator: operator,
-                                value: value,
-                                className: `rule-value ${classNames.value}`,
-                                handleOnChange: this.onValueChanged, 
-                                level: level
-                            }
-                        )
-                    }
+            <Container className={`rule`} title={isMainRule ? 'Select' : combinator} level={level}>
+                {
+                    React.createElement(controls.fieldSelector,
+                        {
+                            options: fields,
+                            value: field,
+                            className: `rule-fields ${classNames.fields}`,
+                            handleOnChange: this.onFieldChanged, 
+                            level: level
+                        }
+                    )
+                }
+                {
+                    React.createElement(controls.operatorSelector,
+                        {
+                            field: field,
+                            options: getOperators(field),
+                            value: operator,
+                            className: `rule-operators ${classNames.operators}`,
+                            handleOnChange: this.onOperatorChanged, 
+                            level: level
+                        }
+                    )
+                }
+                {
+                    React.createElement(controls.valueEditor,
+                        {
+                            field: field,
+                            operator: operator,
+                            value: value,
+                            className: `rule-value ${classNames.value}`,
+                            handleOnChange: this.onValueChanged, 
+                            level: level
+                        }
+                    )
+                }
+                <Controls>
                     {
                         React.createElement(controls.addRuleAction,
                             {
@@ -97,8 +94,8 @@ export default class Rule extends React.Component {
                             })
                             : null
                     }
-                </Col>
-            </Row>
+                </Controls>
+            </Container>
         );
     }
 

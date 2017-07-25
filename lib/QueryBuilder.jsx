@@ -33,7 +33,8 @@ export default class QueryBuilder extends React.Component {
                 removeRuleAction: PropTypes.func,
                 combinatorSelector: PropTypes.func,
                 fieldSelector: PropTypes.func,
-                colSelector: PropTypes.func,
+                controls: PropTypes.func,
+                container: PropTypes.func,
                 rowSelector: PropTypes.func,
                 operatorSelector: PropTypes.func,
                 valueEditor: PropTypes.func
@@ -107,8 +108,8 @@ export default class QueryBuilder extends React.Component {
             removeRuleAction: ActionElement,
             combinatorSelector: ValueSelector,
             fieldSelector: ValueSelector,
-            colSelector: (props) => <div>{props.children}</div>,
-            rowSelector: (props) => <div>{props.children}</div>,
+            container:props => <div {...props}/>,
+            controls: props => <div {...props}/>,
             operatorSelector: ValueSelector,
             valueEditor: ValueEditor
         };
