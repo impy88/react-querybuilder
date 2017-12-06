@@ -149,12 +149,17 @@ export default class QueryBuilder extends React.Component {
 
     }
 
-    getInitialQuery() {
-        return this.props.query || this.createRuleGroup();
+    getInitialQuery(props) {
+        props = props || this.props;
+        return props.query || this.createRuleGroup();
     }
 
     componentDidMount() {
         this._notifyQueryChange(null);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({...this.state, root: this.getInitialQuery(nextProps) });
     }
 
     render() {
